@@ -7,38 +7,40 @@
 
     <ImageView
         android:id="@+id/foto"
-        android:layout_width="230dp"
-        android:layout_height="179dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="248dp"
+        android:layout_height="218dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/direccion"
-        android:layout_width="135dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="36dp"
         android:gravity="center"
         android:hint="Direccion"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/precio" />
 
     <TextView
         android:id="@+id/precio"
-        android:layout_width="135dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="202dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
         android:hint="Precio"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/foto"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
