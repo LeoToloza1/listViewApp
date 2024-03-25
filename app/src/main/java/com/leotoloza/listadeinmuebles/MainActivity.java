@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.leotoloza.listadeinmuebles.MainActivityViewModel;
+import com.leotoloza.listadeinmuebles.model.Inmueble;
+import com.leotoloza.listadeinmuebles.ui.MainActivityViewModel;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.leotoloza.listadeinmuebles;
+package com.leotoloza.listadeinmuebles.ui;
 
 import android.app.Application;
 
@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.leotoloza.listadeinmuebles.model.Inmueble;
+import com.leotoloza.listadeinmuebles.R;
 
 import java.util.ArrayList;
 import java.util.List;
