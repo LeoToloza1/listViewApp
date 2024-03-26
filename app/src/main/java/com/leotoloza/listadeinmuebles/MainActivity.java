@@ -4,34 +4,35 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
-import java.util.ArrayList;
+import com.leotoloza.listadeinmuebles.model.Inmueble;
+import com.leotoloza.listadeinmuebles.ui.MainActivityViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-private ArrayList<Inmueble> lista = new ArrayList<>();
+    private MainActivityViewModel viewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        cargarDatos();
-        generarListView();
-    }
-public void generarListView(){
-    ArrayAdapter<Inmueble> adapter = new ListaAdapter(this,R.layout.item,lista,getLayoutInflater());
-    ListView lv = findViewById(R.id.lista);
-    lv.setAdapter(adapter);
-}
 
-    public void cargarDatos(){
-        lista.add(new Inmueble(R.drawable.casa1,"San Luis", 20000));
-        lista.add(new Inmueble(R.drawable.casa2,"Merlo", 150000));
-        lista.add(new Inmueble(R.drawable.casa2,"Carpineria", 130000));
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        viewModel.getListaInmuebles().observe(this, new Observer<List<Inmueble>>() {
+            @Override
+            public void onChanged(List<Inmueble> inmuebles) {
+                generarListView(inmuebles);
+            }
+        });
     }
 
-
+    private void generarListView(List<Inmueble> listaInmuebles) {
+        ArrayAdapter<Inmueble> adapter = new ListaAdapter(this, R.layout.item, listaInmuebles, getLayoutInflater());
+        ListView lv = findViewById(R.id.lista);
+        lv.setAdapter(adapter);
+    }
 }

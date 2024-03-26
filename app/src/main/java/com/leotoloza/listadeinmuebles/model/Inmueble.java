@@ -1,4 +1,4 @@
-package com.leotoloza.listadeinmuebles;
+package com.leotoloza.listadeinmuebles.model;
 
 import androidx.annotation.NonNull;
 

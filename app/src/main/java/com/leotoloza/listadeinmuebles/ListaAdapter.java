@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.leotoloza.listadeinmuebles.model.Inmueble;
+
 import java.util.List;
 
 public class ListaAdapter extends ArrayAdapter<Inmueble> {
